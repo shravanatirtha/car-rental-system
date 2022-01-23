@@ -1,5 +1,5 @@
 # Car Rental System
-<hr>
+
 ## Spring-Boot React Project
 
 _Example project to start building your own web application_
@@ -98,9 +98,8 @@ Steps to follow:
 
 ## Authors ✒️
 
-* **Jorge Gabín**
-* **Alfonso Landín**
-* **Javier Parapar**
+* **Shravana Tirtha**
+
 
 ---
 IRLab ©2021
