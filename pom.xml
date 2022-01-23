@@ -13,7 +13,7 @@
 
 	<name>Rentberry</name>
 	<description>Car rental system using ReactJs, Boot Spring and Postgresql</description>
-	<url>https://https://github.com/shravanatirtha/car-rental-system/zoho-project/rentberry</url>
+	<url>https://https://github.com/shravanatirtha/car-rental-system</url>
 	<inceptionYear>2022</inceptionYear>
 
 	<parent>
