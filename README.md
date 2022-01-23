@@ -1,4 +1,6 @@
-# Spring-Boot React Project
+# Car Rental System
+<hr>
+## Spring-Boot React Project
 
 _Example project to start building your own web application_
 
