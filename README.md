@@ -2,7 +2,7 @@
 
 <b>Spring-Boot React Project</b>
 
-_Example project to start building your own web application_
+_A web project using ReactJs, Spring Boot and Postgreql_
 
 ## Starting 🚀
 
@@ -99,7 +99,3 @@ Steps to follow:
 ## Authors ✒️
 
 * **Shravana Tirtha**
-
-
----
-IRLab ©2021
