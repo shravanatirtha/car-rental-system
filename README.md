@@ -2,7 +2,7 @@
 
 <b>Spring-Boot React Project</b>
 
-_A web project using ReactJs, Spring Boot and Postgreql_
+_A web project using ReactJs, Spring Boot and Postgresql_
 
 ## Starting 🚀
 
@@ -93,6 +93,7 @@ Steps to follow:
 
 * [Spring-Boot](https://spring.io/projects/spring-boot) - Backend
 * [React](https://es.reactjs.org/) - User Interface
+* [Postgresql](https://www.tutorialspoint.com/postgresql/postgresql_java.htm) - Database
 * [Maven](https://maven.apache.org/) & [yarn](https://yarnpkg.com/) - Project Management
 * [Kubernetes](https://kubernetes.io/) & [Docker](https://www.docker.com/) - Deployment
 
