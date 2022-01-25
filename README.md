@@ -2,7 +2,7 @@
 
 <b>Spring-Boot React Project</b>
 
-_A web project using ReactJs, Spring Boot and Postgresql_
+_A web project using ReactJs, Spring Boot and PostgreSQL_
 
 ## Starting 🚀
 
