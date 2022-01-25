@@ -93,7 +93,7 @@ Steps to follow:
 
 * [Spring-Boot](https://spring.io/projects/spring-boot) - Backend
 * [React](https://es.reactjs.org/) - User Interface
-* [PostgreSQL(https://www.tutorialspoint.com/postgresql/postgresql_java.htm) - Database
+* [PostgreSQL] (https://www.tutorialspoint.com/postgresql/postgresql_java.htm) - Database
 * [Maven](https://maven.apache.org/) & [yarn](https://yarnpkg.com/) - Project Management
 * [Kubernetes](https://kubernetes.io/) & [Docker](https://www.docker.com/) - Deployment
 
