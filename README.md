@@ -2,7 +2,7 @@
 
 <b>Spring-Boot React Project</b>
 
-_Example project to start building your own web application_
+_A web project using ReactJs, Spring Boot and PostgreSQL_
 
 ## Starting 🚀
 
@@ -93,13 +93,10 @@ Steps to follow:
 
 * [Spring-Boot](https://spring.io/projects/spring-boot) - Backend
 * [React](https://es.reactjs.org/) - User Interface
+* [PostgreSQL](https://www.tutorialspoint.com/postgresql/postgresql_java.htm) - Database
 * [Maven](https://maven.apache.org/) & [yarn](https://yarnpkg.com/) - Project Management
 * [Kubernetes](https://kubernetes.io/) & [Docker](https://www.docker.com/) - Deployment
 
 ## Authors ✒️
 
 * **Shravana Tirtha**
-
-
----
-IRLab ©2021
