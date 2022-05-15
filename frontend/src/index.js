@@ -2,9 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './index.css';
-import registerServiceWorker from './registerServiceWorker';
+import { ChakraProvider } from '@chakra-ui/react'
 
-import { App } from "./modules/app";
-
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+function App() {
+  // 2. Wrap ChakraProvider at the root of your app
+  return (
+    <ChakraProvider>
+      <App />
+    </ChakraProvider>
+  )
+}
