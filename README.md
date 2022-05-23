@@ -3,6 +3,9 @@
 <b>Spring-Boot React Project</b>
 
 _A web project using ReactJs, Spring Boot and PostgreSQL_
+#### The project is built using the MVC Web project methodology
+![image](https://user-images.githubusercontent.com/34398606/169754661-3ae625c9-0ff8-4110-9db2-436aea5028ca.png)
+
 
 ## Starting 🚀
 
