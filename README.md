@@ -2,7 +2,7 @@
 
 <b>Spring-Boot React Project</b>
 
-_A web project using ReactJs, Spring Boot and Elastic Search_
+_A web project using ReactJs, Spring Boot and PostgreSQL_
 
 ## Starting 🚀
 
@@ -93,7 +93,7 @@ Steps to follow:
 
 * [Spring-Boot](https://spring.io/projects/spring-boot) - Backend
 * [React](https://es.reactjs.org/) - User Interface
-* [Elastic Search](https://www.elastic.co/) - Database
+* [PostgreSQL](https://www.postgresql.org/) - Database
 * [Maven](https://maven.apache.org/) & [yarn](https://yarnpkg.com/) - Project Management
 * [Kubernetes](https://kubernetes.io/) & [Docker](https://www.docker.com/) - Deployment
 
