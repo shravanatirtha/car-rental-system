@@ -3,6 +3,9 @@
 <b>Spring-Boot React Project</b>
 
 _A web project using ReactJs, Spring Boot and PostgreSQL_
+#### The project is built using the MVC Web project methodology
+![image](https://user-images.githubusercontent.com/34398606/169754661-3ae625c9-0ff8-4110-9db2-436aea5028ca.png)
+
 
 ## Starting 🚀
 
@@ -93,7 +96,7 @@ Steps to follow:
 
 * [Spring-Boot](https://spring.io/projects/spring-boot) - Backend
 * [React](https://es.reactjs.org/) - User Interface
-* [PostgreSQL](https://www.tutorialspoint.com/postgresql/postgresql_java.htm) - Database
+* [PostgreSQL](https://www.postgresql.org/) - Database
 * [Maven](https://maven.apache.org/) & [yarn](https://yarnpkg.com/) - Project Management
 * [Kubernetes](https://kubernetes.io/) & [Docker](https://www.docker.com/) - Deployment
 
