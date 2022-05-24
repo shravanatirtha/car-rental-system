@@ -42,7 +42,11 @@ function Navbar() {
     <nav className={styles.nav}>
       <div className={styles.left}>
         <div className={styles.logo}>
-          <Link to="/">ClothesStore</Link>
+          {/* <img src="https://ik.imagekit.io/tirthashravana/Pathberries/logo192.png?ik-sdk-version=javascript-1.4.3&updatedAt=1653399773059" className={styles.logo}/> */}
+          <Link to="/">Berry</Link>
+          <Link to="/" className={styles.green}>
+            Ride
+          </Link>
         </div>
         <ul className={styles.menu}>
           <li>
@@ -76,12 +80,12 @@ function Navbar() {
         {!loggedIn && (
           <>
             <Link to="/signin">
-              <Button className={styles.registerBtns} colorScheme="purple">
+              <Button className={styles.registerBtns}>
                 Login
               </Button>
             </Link>
             <Link className="registerLink" to="/signup">
-              <Button className={styles.registerBtns} colorScheme="purple">
+              <Button className={styles.registerBtns}>
                 Register
               </Button>
             </Link>

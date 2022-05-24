@@ -77,14 +77,14 @@ function Card({ item }) {
       </Link>
       <Box className={styles.buttonContainer}>
         <Button
-          style={{ backgroundColor: findFavorItem ? "purple" : "red" }}
+          style={{ backgroundColor: findFavorItem ? "pink" : "mediumseagreen" }}
           onClick={loggedIn ? () => addToFavor(item, findFavorItem) : goToLink}
         >
           {myHearthSvg}
         </Button>
         <Button
           style={{
-            backgroundColor: findBasketItem ? "purple" : "orange",
+            backgroundColor: findBasketItem ? "pink" : "darkslateblue",
             color: "white",
             fontSize: "0.9rem",
             fontWeight: "bolder",
