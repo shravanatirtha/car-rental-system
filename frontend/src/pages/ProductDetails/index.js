@@ -94,7 +94,7 @@ function ProductDetail() {
         </Button>
       </Link>
       <Button
-        colorScheme={findFavorItem ? "purple" : "red"}
+        colorScheme={findFavorItem ? "pink" : "mediumseagreen"}
         ml="6"
         onClick={
           loggedIn ? () => addToFavor(myProduct, findFavorItem) : goToLink
@@ -104,7 +104,7 @@ function ProductDetail() {
       </Button>
 
       <Button
-        colorScheme={findBasketItem ? "purple" : "orange"}
+        colorScheme={findBasketItem ? "pink" : "darkslateblue"}
         ml="6"
         onClick={
           loggedIn ? () => addToBasket(myProduct, findBasketItem) : goToLink

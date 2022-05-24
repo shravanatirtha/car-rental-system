@@ -42,7 +42,7 @@ function Profile({ history }) {
         </Button>
       </Box>
       <Link to="/">
-        <Button colorScheme="orange">Start Shopping</Button>
+        <Button colorScheme="orange">Start Renting</Button>
       </Link>
     </Flex>
   );

@@ -91,7 +91,7 @@ function Basket() {
           </ul>
           <Box maxWidth="700" mt="10">
             <Text fontSize="22" align="right">
-              Total: {total} ₺
+              For 24 hours: {total} Rs.
             </Text>
           </Box>
           <Box maxWidth="700" align="right">

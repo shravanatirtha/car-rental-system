@@ -3,9 +3,9 @@ import * as yup from "yup";
 const validations = yup.object().shape({
   email: yup
     .string()
-    .email("Geçerli bir email giriniz")
-    .required("Zorunlu alan."),
-  password: yup.string().min(5, "Parolanız min 5 char olmalı").required(),
+    .email("Invalid Email")
+    .required("Enter valid email"),
+  password: yup.string().min(8, "Password must be 8 characters long").required(),
 });
 
 export default validations;
