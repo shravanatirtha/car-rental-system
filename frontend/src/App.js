@@ -4,14 +4,14 @@ import Navbar from "./components/Navbar";
 import Signup from "./pages/Auth/Signup";
 import Signin from "./pages/Auth/Signin";
 import Products from "./pages/Products";
-import ProductDetail from "./pages/ProductDetail";
+import ProductDetail from "./pages/ProductDetails";
 import Profile from "./pages/Profile";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import Basket from "./pages/Basket";
 import Error404 from "./pages/Error404";
 import Admin from "./pages/Admin";
 import Contact from "./pages/Contact";
-import Favor from "./pages/Favor";
+import Favor from "./pages/Favorites";
 
 function App() {
   return (
