@@ -5,9 +5,9 @@ logging:
         SQL: debug
 spring:
   datasource:
-    url: @dataSource.url@
-    username: @dataSource.user@
-    password: @dataSource.password@
+    url: jdbc:postgresql://localhost:5432/berryride
+    username: postgres
+    password: root
     max-active: 4
     max-idle: 2
     max-wait: 10000
