@@ -10,3 +10,4 @@ CREATE TABLE User (
     role TINYINT NOT NULL,
 );
 
+--DROP TABLE IF EXISTS Car;
