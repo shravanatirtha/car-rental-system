@@ -100,6 +100,11 @@ Steps to follow:
 * [Maven](https://maven.apache.org/) & [yarn](https://yarnpkg.com/) - Project Management
 * [Kubernetes](https://kubernetes.io/) & [Docker](https://www.docker.com/) - Deployment
 
+## Debug 
+* Just in case if the tomcat fails and says port 8080 alread in use, then open cmd in admin mode and type <br />
+> netstat -ao | find "8080"
+> Taskkill /PID  20712 /F
+
 ## Authors ✒️
 
 * **Shravana Tirtha**
