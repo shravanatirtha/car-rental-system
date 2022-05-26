@@ -32,9 +32,9 @@ spring:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 server:
   servlet:
-    context-path: @project.contextPath@
+    context-path: berryride
 project:
   jwt:
-    signKey: Bu:GW8bgPlEw
+    signKey: shravanatirtha
     expirationMinutes: 1440
 
