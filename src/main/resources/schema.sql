@@ -1,13 +1,11 @@
-DROP TABLE IF EXISTS User;
+DROP TABLE IF EXISTS Users;
 
-CREATE TABLE User (
-    id serial NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    userName VARCHAR(60) unique NOT NULL,
-    password VARCHAR(60) NOT NULL, 
-    firstName VARCHAR(60) NOT NULL,
-    lastName VARCHAR(60) NOT NULL, 
-    email VARCHAR(60) unique NOT NULL,
-    role TINYINT NOT NULL,
+CREATE TABLE Users (
+    id serial NOT NULL PRIMARY KEY,
+    userName VARCHAR unique NOT NULL,
+    password VARCHAR NOT NULL, 
+    firstName VARCHAR NOT NULL,
+    lastName VARCHAR NOT NULL, 
+    email VARCHAR unique NOT NULL
 );
-
 --DROP TABLE IF EXISTS Car;
