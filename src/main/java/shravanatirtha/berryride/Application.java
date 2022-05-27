@@ -14,26 +14,26 @@ import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 @SpringBootApplication
 public class Application {
 
-	/**
-	 * The main method.
-	 *
-	 * @param args the arguments
-	 */
-	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
-		System.out.println("Hello World");
-	}
-	
-	/**
-	 * Password encoder.
-	 *
-	 * @return the b crypt password encoder
-	 */
-	@Bean
-    public BCryptPasswordEncoder passwordEncoder() {
-    	return new BCryptPasswordEncoder();
+    /**
+     * The main method.
+     *
+     * @param args the arguments
+     */
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+        System.out.println("Hello World");
     }
-    
+
+    /**
+     * Password encoder.
+     *
+     * @return the b crypt password encoder
+     */
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
     /**
      * Message source.
      *
@@ -41,15 +41,15 @@ public class Application {
      */
     @Bean
     public MessageSource messageSource() {
-    	
+
         ReloadableResourceBundleMessageSource bean = new ReloadableResourceBundleMessageSource();
-        
+
         bean.setBasename("classpath:messages");
         bean.setDefaultEncoding("UTF-8");
-        
+
         return bean;
     }
-    
+
     /**
      * Validator.
      *
@@ -57,11 +57,11 @@ public class Application {
      */
     @Bean
     public LocalValidatorFactoryBean validator() {
-    	
+
         LocalValidatorFactoryBean bean = new LocalValidatorFactoryBean();
-        
+
         bean.setValidationMessageSource(messageSource());
-        
+
         return bean;
     }
 
