@@ -10,14 +10,14 @@ function ProtectedRoute({ component: Component, admin, ...rest }) {
 			{...rest}
 			render={(props) => {
 				if (admin && user.role !== "admin") {
-					return <Redirect to={{ pathname: "/" }} />;
+					return <Redirect to={{ pathname: "/berryride" }} />;
 				}
 
 				if (loggedIn) {
 					return <Component {...props} />;
 				}
 
-				return <Redirect to={{ pathname: "/" }} />;
+				return <Redirect to={{ pathname: "/admin" }} />;
 			}}
 		/>
 	);

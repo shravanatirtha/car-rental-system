@@ -21,7 +21,7 @@ function App() {
 
         <div id="content">
           <Switch>
-            <Route path="/berryride/" exact component={Products} />
+            <Route path="/berryride" exact component={Products} />
             <Route path="/product/:product_id" component={ProductDetail} />
             <Route path="/signin" component={Signin} />
             <Route path="/signup" component={Signup} />
