@@ -26,7 +26,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import shravanatirtha.berryride.model.common.exceptions.DuplicateInstanceException;
 import shravanatirtha.berryride.model.common.exceptions.InstanceNotFoundException;
-import shravanatirtha.berryride.model.entities.User;
+import shravanatirtha.berryride.model.entities.Users;
 import shravanatirtha.berryride.model.services.exceptions.IncorrectLoginException;
 import shravanatirtha.berryride.model.services.exceptions.IncorrectPasswordException;
 import shravanatirtha.berryride.model.services.exceptions.PermissionException;
@@ -45,8 +45,9 @@ import shravanatirtha.berryride.rest.dtos.UserDto;
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
-
+	 
 	/** The Constant INCORRECT_LOGIN_EXCEPTION_CODE. */
+	
 	private static final String INCORRECT_LOGIN_EXCEPTION_CODE = "project.exceptions.IncorrectLoginException";
 
 	/** The Constant INCORRECT_PASSWORD_EXCEPTION_CODE. */
@@ -114,14 +115,14 @@ public class UserController {
 			@Validated({ UserDto.AllValidations.class }) @RequestBody UserDto userDto)
 			throws DuplicateInstanceException {
 
-		User user = toUser(userDto);
+		Users users = toUser(userDto);
 
-		userService.signUp(user);
+		userService.signUp(users);
 
-		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(user.getId())
+		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(users.getId())
 				.toUri();
 
-		return ResponseEntity.created(location).body(toAuthenticatedUserDto(generateServiceToken(user), user));
+		return ResponseEntity.created(location).body(toAuthenticatedUserDto(generateServiceToken(users), users));
 
 	}
 
@@ -135,9 +136,9 @@ public class UserController {
 	@PostMapping("/login")
 	public AuthenticatedUserDto login(@Validated @RequestBody LoginParamsDto params) throws IncorrectLoginException {
 
-		User user = userService.login(params.getUserName(), params.getPassword());
+		Users users = userService.login(params.getUserName(), params.getPassword());
 
-		return toAuthenticatedUserDto(generateServiceToken(user), user);
+		return toAuthenticatedUserDto(generateServiceToken(users), users);
 
 	}
 
@@ -153,9 +154,9 @@ public class UserController {
 	public AuthenticatedUserDto loginFromServiceToken(@RequestAttribute Long userId,
 			@RequestAttribute String serviceToken) throws InstanceNotFoundException {
 
-		User user = userService.loginFromId(userId);
+		Users users = userService.loginFromId(userId);
 
-		return toAuthenticatedUserDto(serviceToken, user);
+		return toAuthenticatedUserDto(serviceToken, users);
 
 	}
 
@@ -210,12 +211,12 @@ public class UserController {
 	/**
 	 * Generate service token.
 	 *
-	 * @param user the user
+	 * @param users the user
 	 * @return the string
 	 */
-	private String generateServiceToken(User user) {
+	private String generateServiceToken(Users users) {
 
-		JwtInfo jwtInfo = new JwtInfo(user.getId(), user.getUserName(), user.getRole().toString());
+		JwtInfo jwtInfo = new JwtInfo(users.getId(), users.getUserName(), users.getRole().toString());
 
 		return jwtGenerator.generate(jwtInfo);
 
