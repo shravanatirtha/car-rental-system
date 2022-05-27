@@ -7,7 +7,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 /**
  * The Interface UserDao.
  */
-public interface UserDao extends PagingAndSortingRepository<User, Long> {
+public interface UserDao extends PagingAndSortingRepository<Users, Long> {
 
 	/**
 	 * Exists by user name.
@@ -23,6 +23,6 @@ public interface UserDao extends PagingAndSortingRepository<User, Long> {
 	 * @param userName the user name
 	 * @return the optional
 	 */
-	Optional<User> findByUserName(String userName);
+	Optional<Users> findByUserName(String userName);
 
 }
