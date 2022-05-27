@@ -1,6 +1,6 @@
 package shravanatirtha.berryride.rest.dtos;
 
-import shravanatirtha.berryride.model.entities.User;
+import shravanatirtha.berryride.model.entities.Users;
 
 /**
  * The Class UserConversor.
@@ -16,12 +16,12 @@ public class UserConversor {
 	/**
 	 * To user dto.
 	 *
-	 * @param user the user
+	 * @param users the user
 	 * @return the user dto
 	 */
-	public static final UserDto toUserDto(User user) {
-		return new UserDto(user.getId(), user.getUserName(), user.getFirstName(), user.getLastName(), user.getEmail(),
-				user.getRole().toString());
+	public static final UserDto toUserDto(Users users) {
+		return new UserDto(users.getId(), users.getUserName(), users.getFirstName(), users.getLastName(), users.getEmail(),
+				users.getRole().toString());
 	}
 
 	/**
@@ -30,9 +30,9 @@ public class UserConversor {
 	 * @param userDto the user dto
 	 * @return the user
 	 */
-	public static final User toUser(UserDto userDto) {
+	public static final Users toUser(UserDto userDto) {
 
-		return new User(userDto.getUserName(), userDto.getPassword(), userDto.getFirstName(), userDto.getLastName(),
+		return new Users(userDto.getUserName(), userDto.getPassword(), userDto.getFirstName(), userDto.getLastName(),
 				userDto.getEmail());
 	}
 
@@ -40,12 +40,12 @@ public class UserConversor {
 	 * To authenticated user dto.
 	 *
 	 * @param serviceToken the service token
-	 * @param user         the user
+	 * @param users         the user
 	 * @return the authenticated user dto
 	 */
-	public static final AuthenticatedUserDto toAuthenticatedUserDto(String serviceToken, User user) {
+	public static final AuthenticatedUserDto toAuthenticatedUserDto(String serviceToken, Users users) {
 
-		return new AuthenticatedUserDto(serviceToken, toUserDto(user));
+		return new AuthenticatedUserDto(serviceToken, toUserDto(users));
 
 	}
 
