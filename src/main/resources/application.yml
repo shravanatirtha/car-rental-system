@@ -4,17 +4,7 @@ logging:
       hibernate:
         SQL: debug
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/berryride
-    username: postgres
-    password: root
-    max-active: 4
-    max-idle: 2
-    max-wait: 10000
-    remove-abandoned: true
-    remove-abandoned-timeout: 60
-    log-abandoned: true
-    validation-query: SELECT 1
+  
   devtools:
     restart:
       trigger-file: reload
@@ -32,7 +22,7 @@ spring:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 server:
   servlet:
-    context-path: berryride
+    context-path: /berryride
 project:
   jwt:
     signKey: shravanatirtha
