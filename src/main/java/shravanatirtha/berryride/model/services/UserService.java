@@ -2,7 +2,7 @@ package shravanatirtha.berryride.model.services;
 
 import shravanatirtha.berryride.model.common.exceptions.DuplicateInstanceException;
 import shravanatirtha.berryride.model.common.exceptions.InstanceNotFoundException;
-import shravanatirtha.berryride.model.entities.User;
+import shravanatirtha.berryride.model.entities.Users;
 import shravanatirtha.berryride.model.services.exceptions.IncorrectLoginException;
 import shravanatirtha.berryride.model.services.exceptions.IncorrectPasswordException;
 
@@ -14,10 +14,10 @@ public interface UserService {
 	/**
 	 * Sign up.
 	 *
-	 * @param user the user
+	 * @param users the user
 	 * @throws DuplicateInstanceException the duplicate instance exception
 	 */
-	void signUp(User user) throws DuplicateInstanceException;
+	void signUp(Users users) throws DuplicateInstanceException;
 	
 	/**
 	 * Login.
@@ -27,7 +27,7 @@ public interface UserService {
 	 * @return the user
 	 * @throws IncorrectLoginException the incorrect login exception
 	 */
-	User login(String userName, String password) throws IncorrectLoginException;
+	Users login(String userName, String password) throws IncorrectLoginException;
 	
 	/**
 	 * Login from id.
@@ -36,7 +36,7 @@ public interface UserService {
 	 * @return the user
 	 * @throws InstanceNotFoundException the instance not found exception
 	 */
-	User loginFromId(Long id) throws InstanceNotFoundException;
+	Users loginFromId(Long id) throws InstanceNotFoundException;
 	
 	/**
 	 * Update profile.
@@ -48,7 +48,7 @@ public interface UserService {
 	 * @return the user
 	 * @throws InstanceNotFoundException the instance not found exception
 	 */
-	User updateProfile(Long id, String firstName, String lastName, String email) throws InstanceNotFoundException;
+	Users updateProfile(Long id, String firstName, String lastName, String email) throws InstanceNotFoundException;
 	
 	/**
 	 * Change password.
@@ -61,5 +61,8 @@ public interface UserService {
 	 */
 	void changePassword(Long id, String oldPassword, String newPassword)
 		throws InstanceNotFoundException, IncorrectPasswordException;
+
+	static void setPassword(String encode) {
+	}
 
 }

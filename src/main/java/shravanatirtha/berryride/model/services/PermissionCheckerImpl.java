@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import shravanatirtha.berryride.model.common.exceptions.InstanceNotFoundException;
-import shravanatirtha.berryride.model.entities.User;
+import shravanatirtha.berryride.model.entities.Users;
 import shravanatirtha.berryride.model.entities.UserDao;
 
 /**
@@ -37,15 +37,15 @@ public class PermissionCheckerImpl implements PermissionChecker {
 	}
 
 	@Override
-	public User checkUser(Long userId) throws InstanceNotFoundException {
+	public Users checkUser(Long userId) throws InstanceNotFoundException {
 
-		Optional<User> user = userDao.findById(userId);
+		Optional<Users> users = userDao.findById(userId);
 		
-		if (!user.isPresent()) {
+		if (!users.isPresent()) {
 			throw new InstanceNotFoundException("project.entities.user", userId);
 		}
 		
-		return user.get();
+		return users.get();
 		
 	}
 

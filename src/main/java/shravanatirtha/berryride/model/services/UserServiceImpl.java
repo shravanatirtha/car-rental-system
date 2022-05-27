@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import shravanatirtha.berryride.model.common.exceptions.DuplicateInstanceException;
 import shravanatirtha.berryride.model.common.exceptions.InstanceNotFoundException;
-import shravanatirtha.berryride.model.entities.User;
+import shravanatirtha.berryride.model.entities.Users;
 import shravanatirtha.berryride.model.entities.UserDao;
 import shravanatirtha.berryride.model.services.exceptions.IncorrectLoginException;
 import shravanatirtha.berryride.model.services.exceptions.IncorrectPasswordException;
@@ -40,16 +40,16 @@ public class UserServiceImpl implements UserService {
 	 * @throws DuplicateInstanceException the duplicate instance exception
 	 */
 	@Override
-	public void signUp(User user) throws DuplicateInstanceException {
+	public void signUp(Users users) throws DuplicateInstanceException {
 
-		if (userDao.existsByUserName(user.getUserName())) {
-			throw new DuplicateInstanceException("project.entities.user", user.getUserName());
+		if (userDao.existsByUserName(users.getUserName())) {
+			throw new DuplicateInstanceException("project.entities.user", users.getUserName());
 		}
 
-		user.setPassword(passwordEncoder.encode(user.getPassword()));
-		user.setRole(User.RoleType.USER);
+		users.setPassword(passwordEncoder.encode(users.getPassword()));
+		users.setRole(Users.RoleType.USERS);
 
-		userDao.save(user);
+		userDao.save(users);
 
 	}
 
@@ -63,9 +63,9 @@ public class UserServiceImpl implements UserService {
 	 */
 	@Override
 	@Transactional(readOnly = true)
-	public User login(String userName, String password) throws IncorrectLoginException {
+	public Users login(String userName, String password) throws IncorrectLoginException {
 
-		Optional<User> user = userDao.findByUserName(userName);
+		Optional<Users> user = userDao.findByUserName(userName);
 
 		if (!user.isPresent()) {
 			throw new IncorrectLoginException(userName, password);
@@ -88,7 +88,7 @@ public class UserServiceImpl implements UserService {
 	 */
 	@Override
 	@Transactional(readOnly = true)
-	public User loginFromId(Long id) throws InstanceNotFoundException {
+	public Users loginFromId(Long id) throws InstanceNotFoundException {
 		return permissionChecker.checkUser(id);
 	}
 
@@ -103,10 +103,10 @@ public class UserServiceImpl implements UserService {
 	 * @throws InstanceNotFoundException the instance not found exception
 	 */
 	@Override
-	public User updateProfile(Long id, String firstName, String lastName, String email)
+	public Users updateProfile(Long id, String firstName, String lastName, String email)
 			throws InstanceNotFoundException {
 
-		User user = permissionChecker.checkUser(id);
+		Users user = permissionChecker.checkUser(id);
 
 		user.setFirstName(firstName);
 		user.setLastName(lastName);
@@ -129,12 +129,12 @@ public class UserServiceImpl implements UserService {
 	public void changePassword(Long id, String oldPassword, String newPassword)
 			throws InstanceNotFoundException, IncorrectPasswordException {
 
-		User user = permissionChecker.checkUser(id);
+		Users users = permissionChecker.checkUser(id);
 
-		if (!passwordEncoder.matches(oldPassword, user.getPassword())) {
+		if (!passwordEncoder.matches(oldPassword, users.getPassword())) {
 			throw new IncorrectPasswordException();
 		} else {
-			user.setPassword(passwordEncoder.encode(newPassword));
+			UserService.setPassword(passwordEncoder.encode(newPassword));
 		}
 
 	}

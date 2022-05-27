@@ -1,7 +1,7 @@
 package shravanatirtha.berryride.model.services;
 
 import shravanatirtha.berryride.model.common.exceptions.InstanceNotFoundException;
-import shravanatirtha.berryride.model.entities.User;
+import shravanatirtha.berryride.model.entities.Users;
 
 /**
  * The Interface PermissionChecker.
@@ -23,6 +23,6 @@ public interface PermissionChecker {
 	 * @return the user
 	 * @throws InstanceNotFoundException the instance not found exception
 	 */
-	public User checkUser(Long userId) throws InstanceNotFoundException;
+	public Users checkUser(Long userId) throws InstanceNotFoundException;
 	
 }
