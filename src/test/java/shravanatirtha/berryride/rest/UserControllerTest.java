@@ -17,8 +17,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import shravanatirtha.berryride.model.entities.User;
-import shravanatirtha.berryride.model.entities.User.RoleType;
+import shravanatirtha.berryride.model.entities.Users;
+import shravanatirtha.berryride.model.entities.Users.RoleType;
 import shravanatirtha.berryride.model.entities.UserDao;
 import shravanatirtha.berryride.model.services.exceptions.IncorrectLoginException;
 import shravanatirtha.berryride.rest.controllers.UserController;
@@ -65,15 +65,15 @@ public class UserControllerTest {
 	private AuthenticatedUserDto createAuthenticatedUser(String userName, RoleType roleType)
 			throws IncorrectLoginException {
 
-		User user = new User(userName, PASSWORD, "newUser", "user", "user@test.com");
+		Users users = new Users(userName, PASSWORD, "newUser", "users", "user@test.com");
 
-		user.setPassword(passwordEncoder.encode(user.getPassword()));
-		user.setRole(roleType);
+		users.setPassword(passwordEncoder.encode(users.getPassword()));
+		users.setRole(roleType);
 
-		userDao.save(user);
+		userDao.save(users);
 
 		LoginParamsDto loginParams = new LoginParamsDto();
-		loginParams.setUserName(user.getUserName());
+		loginParams.setUserName(users.getUserName());
 		loginParams.setPassword(PASSWORD);
 
 		return userController.login(loginParams);
@@ -88,15 +88,15 @@ public class UserControllerTest {
 	@Test
 	public void testPostLogin_Ok() throws Exception {
 
-		AuthenticatedUserDto user = createAuthenticatedUser("admin", RoleType.USER);
+		AuthenticatedUserDto users = createAuthenticatedUser("admin", RoleType.USERS);
 
 		LoginParamsDto loginParams = new LoginParamsDto();
-		loginParams.setUserName(user.getUserDto().getUserName());
+		loginParams.setUserName(users.getUserDto().getUserName());
 		loginParams.setPassword(PASSWORD);
 
 		ObjectMapper mapper = new ObjectMapper();
 
-		mockMvc.perform(post("/api/users/login").header("Authorization", "Bearer " + user.getServiceToken())
+		mockMvc.perform(post("/api/users/login").header("Authorization", "Bearer " + users.getServiceToken())
 				.contentType(MediaType.APPLICATION_JSON).content(mapper.writeValueAsBytes(loginParams)))
 				.andExpect(status().isOk());
 
