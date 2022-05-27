@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import shravanatirtha.berryride.model.common.exceptions.DuplicateInstanceException;
 import shravanatirtha.berryride.model.common.exceptions.InstanceNotFoundException;
-import shravanatirtha.berryride.model.entities.User;
+import shravanatirtha.berryride.model.entities.Users;
 
 /**
  * The Class UserServiceTest.
@@ -35,8 +35,8 @@ public class UserServiceTest {
 	 * @param userName the user name
 	 * @return the user
 	 */
-	private User createUser(String userName) {
-		return new User(userName, "password", "firstName", "lastName", userName + "@" + userName + ".com");
+	private Users createUser(String userName) {
+		return new Users(userName, "password", "firstName", "lastName", userName + "@" + userName + ".com");
 	}
 
 	/**
@@ -48,14 +48,14 @@ public class UserServiceTest {
 	@Test
 	public void testSignUpAndLoginFromId() throws DuplicateInstanceException, InstanceNotFoundException {
 
-		User user = createUser("user");
+		Users users = createUser("users");
 
-		userService.signUp(user);
+		userService.signUp(users);
 
-		User loggedInUser = userService.loginFromId(user.getId());
+		Users loggedInUser = userService.loginFromId(users.getId());
 
-		assertEquals(user, loggedInUser);
-		assertEquals(User.RoleType.USER, user.getRole());
+		assertEquals(users, loggedInUser);
+		assertEquals(Users.RoleType.USERS, users.getRole());
 
 	}
 }
