@@ -10,7 +10,7 @@ function Products() {
 
   const { isLoading, error, data } = useQuery("products", fetchProductList);
   if (isLoading) return "Loading...";
-  if (error) return "an aerror occured";
+  if (error) return "an error occured";
   // console.log("data", data);
 
   return (
