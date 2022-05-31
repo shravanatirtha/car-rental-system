@@ -9,7 +9,7 @@ function Profile({ history }) {
   const handleLogout = async () => {
     logout(() => {
       //anasayfaya yönlendirme parametresi
-      history.push("/");
+      history.push("/berryride");
     });
   };
 
