@@ -78,17 +78,17 @@ function ProductDetail() {
     },
     {
       original:
-        "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "",
     },
     {
       original:
-        "https://images.unsplash.com/photo-1620799140188-3b2a02fd9a77?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=966&q=80",
+        "",
     },
   ];
 
   return (
     <div className={styles.productDetailContainerDiv}>
-      <Link to="/">
+      <Link to="/berryride">
         <Button colorScheme="green" ml="6">
           {myHomeSvg}
         </Button>
