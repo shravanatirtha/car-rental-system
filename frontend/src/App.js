@@ -22,15 +22,15 @@ function App() {
         <div id="content">
           <Switch>
             <Route path="/berryride" exact component={Products} />
-            <Route path="/product/:product_id" component={ProductDetail} />
-            <Route path="/signin" component={Signin} />
-            <Route path="/signup" component={Signup} />
-            <Route path="/contact" component={Contact} />
-            <Route path="/basket" component={Basket} />
-            <Route path="/favor" component={Favor} />
+            <Route path="/berryride/product/:product_id" component={ProductDetail} />
+            <Route path="/berryride/signin" component={Signin} />
+            <Route path="/berryride/signup" component={Signup} />
+            <Route path="/berryride/contact" component={Contact} />
+            <Route path="/berryride/basket" component={Basket} />
+            <Route path="/berryride/favor" component={Favor} />
 
-            <ProtectedRoute path="/profile" component={Profile} />
-            <ProtectedRoute path="/admin" component={Admin} admin={true} />
+            <ProtectedRoute path="/berryride/profile" component={Profile} />
+            <ProtectedRoute path="/berryride/admin" component={Admin} admin={true} />
             <Route path="*" component={Error404} />
           </Switch>
         </div>
