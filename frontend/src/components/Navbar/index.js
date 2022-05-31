@@ -43,17 +43,17 @@ function Navbar() {
       <div className={styles.left}>
         <div className={styles.logo}>
           {/* <img src="https://ik.imagekit.io/tirthashravana/Pathberries/logo192.png?ik-sdk-version=javascript-1.4.3&updatedAt=1653399773059" className={styles.logo}/> */}
-          <Link to="/">Berry</Link>
-          <Link to="/" className={styles.green}>
+          <Link to="/berryride">Berry</Link>
+          <Link to="/berryride" className={styles.green}>
             Ride
           </Link>
         </div>
         <ul className={styles.menu}>
           <li>
-            <Link to="/">Store</Link>
+            <Link to="/berryride">Store</Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link to="/berryride/contact">Contact</Link>
           </li>
         </ul>
       </div>
@@ -79,12 +79,12 @@ function Navbar() {
       <div className={styles.right}>
         {!loggedIn && (
           <>
-            <Link to="/signin">
+            <Link to="/berryride/signin">
               <Button className={styles.registerBtns}>
                 Login
               </Button>
             </Link>
-            <Link className="registerLink" to="/signup">
+            <Link className="registerLink" to="/berryride/signup">
               <Button className={styles.registerBtns}>
                 Register
               </Button>
@@ -94,7 +94,7 @@ function Navbar() {
         {loggedIn && (
           <>
             {favors.length > 0 && (
-              <Link to="/favor">
+              <Link to="/berryride/favor">
                 <Button colorScheme="purple" variant="outline">
                   {myHearthSvg}
                   <sup>{favors.length}</sup>
@@ -102,20 +102,20 @@ function Navbar() {
               </Link>
             )}
             {items.length > 0 && (
-              <Link to="/basket">
+              <Link to="/berryride/basket">
                 <Button colorScheme="purple" variant="outline">
                   {myCartSvg} <sup>{items.length}</sup>
                 </Button>
               </Link>
             )}
             {user?.role === "admin" && (
-              <Link to="/admin">
+              <Link to="/berryride/admin">
                 <Button colorScheme="purple" variant="outline" fontSize="small">
                   Admin
                 </Button>
               </Link>
             )}
-            <Link to="/profile">
+            <Link to="/berryride/profile">
               <Button colorScheme="purple">{myProfileSvg}</Button>
             </Link>
           </>
