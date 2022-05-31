@@ -4,7 +4,7 @@ axios.interceptors.request.use(
   function (config) {
     const { origin } = new URL(config.url);
 
-    const allowedOrigins = [`https://610eb0c37f793c0017419593.mockapi.io`];
+    const allowedOrigins = [`https://62924c9dcd0c91932b705b3f.mockapi.io/berryride`];
     const token = localStorage.getItem("access-token");
 
     if (allowedOrigins.includes(origin)) {
@@ -20,7 +20,7 @@ axios.interceptors.request.use(
 
 export const fetchProductList = async ({ pageParam = 0 }) => {
   const { data } = await axios.get(
-    "https://610eb0c37f793c0017419593.mockapi.io/products"
+    "https://62924c9dcd0c91932b705b3f.mockapi.io/berryride/products"
   );
 
   return data;
@@ -28,7 +28,7 @@ export const fetchProductList = async ({ pageParam = 0 }) => {
 
 export const fetchProduct = async (id) => {
   const { data } = await axios.get(
-    `https://610eb0c37f793c0017419593.mockapi.io/products?id=${id}`
+    `https://62924c9dcd0c91932b705b3f.mockapi.io/berryride/products?id=${id}`
   );
 
   return data;
@@ -36,7 +36,8 @@ export const fetchProduct = async (id) => {
 
 export const postProduct = async (input) => {
   const { data } = await axios.post(
-    `https://610eb0c37f793c0017419593.mockapi.io/products`,
+    `https://62924c9dcd0c91932b705b3f.mockapi.io/berryride/products`,
+    //`https://610eb0c37f793c0017419593.mockapi.io/products`,
     input
   );
 
@@ -97,7 +98,7 @@ export const fetchOrders = async () => {
 
 export const deleteProduct = async (product_id) => {
   const { data } = await axios.delete(
-    `https://610eb0c37f793c0017419593.mockapi.io/products/:${product_id}`
+    `https://62924c9dcd0c91932b705b3f.mockapi.io/berryride/products/:${product_id}`
   );
 
   return data;
@@ -105,7 +106,7 @@ export const deleteProduct = async (product_id) => {
 
 export const updateProduct = async (input, product_id) => {
   const { data } = await axios.put(
-    `https://610eb0c37f793c0017419593.mockapi.io/products/${product_id}`,
+    `https://62924c9dcd0c91932b705b3f.mockapi.io/berryride/products/${product_id}`,
     input
   );
   return data;
