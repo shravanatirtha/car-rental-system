@@ -72,7 +72,7 @@ function Basket() {
           <ul className={styles.basketul}>
             {items.map((item) => (
               <li key={item.id} className={styles.basketli}>
-                <Link to={`/product/${item.id}`} className={styles.basketlink}>
+                <Link to={`/berryride/product/${item.id}`} className={styles.basketlink}>
                   <Image htmlWidth={100} src={item.image} alt="basket item" />
                 </Link>
                 <Text className={styles.titletext}>{item.title}</Text>
