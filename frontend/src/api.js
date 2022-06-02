@@ -4,7 +4,9 @@ axios.interceptors.request.use(
   function (config) {
     const { origin } = new URL(config.url);
 
-    const allowedOrigins = [`https://62924c9dcd0c91932b705b3f.mockapi.io/berryride`];
+    const allowedOrigins = [
+      `https://62924c9dcd0c91932b705b3f.mockapi.io/berryride`,
+    ];
     const token = localStorage.getItem("access-token");
 
     if (allowedOrigins.includes(origin)) {
@@ -46,7 +48,8 @@ export const postProduct = async (input) => {
 
 export const fetchRegister = async (input) => {
   const { data } = await axios.post(
-    `https://610eb0c37f793c0017419593.mockapi.io/users`, input
+    `https://610eb0c37f793c0017419593.mockapi.io/users`,
+    input
   );
   return data;
 };
