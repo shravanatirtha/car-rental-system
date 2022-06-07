@@ -105,8 +105,10 @@ Steps to follow:
 ## Debug
 
 - Just in case if the tomcat fails and says port 8080 alread in use, then open cmd in admin mode and type <br />
-  > netstat -ao | find "8080" <br />
-  > Taskkill /PID 20712 /F
+ ```
+ netstat -ao | find "8080" 
+ Taskkill /PID 20712 /F
+ ```
 
 ## Author ✒️
 
