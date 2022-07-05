@@ -52,7 +52,7 @@ _Note: both frontend and backend are configured to start on path /projectname. M
   yarn start
   ```
 
-Now you can test your app in http://localhost:3000/rentberry
+Now you can test your app in http://localhost:3000/rentberry (frontend)
 
 **2. Access frontend in port 8080**
 
