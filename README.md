@@ -52,7 +52,7 @@ _Note: both frontend and backend are configured to start on path /projectname. M
   yarn start
   ```
 
-Now you can test your app in http://localhost:3000/rentberry
+Now you can test your app in http://localhost:3000/rentberry (frontend)
 
 **2. Access frontend in port 8080**
 
@@ -105,8 +105,10 @@ Steps to follow:
 ## Debug
 
 - Just in case if the tomcat fails and says port 8080 alread in use, then open cmd in admin mode and type <br />
-  > netstat -ao | find "8080" <br />
-  > Taskkill /PID 20712 /F
+ ```
+ netstat -ao | find "8080" 
+ Taskkill /PID 20712 /F
+ ```
 
 ## Author ✒️
 
