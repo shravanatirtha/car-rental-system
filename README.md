@@ -45,11 +45,11 @@ _Note: both frontend and backend are configured to start on path /projectname. M
   ```
 - Install your frontend app (not necessary if mvn install was executed correctly)
   ```
-  yarn install
+  npm install
   ```
 - Start react app
   ```
-  yarn start
+  npm start
   ```
 
 Now you can test your app in http://localhost:3000/rentberry (frontend)
