@@ -18,7 +18,6 @@ Software and tools you will need to run this project:
 
 - Java 11 (_tested version_)
 - Node v14.17.3 (_tested version_)
-- yarn 1.22.10 (_tested version_)
 - Eclipse
 - VS Code (_Reccomended for frontend developement_)
 
